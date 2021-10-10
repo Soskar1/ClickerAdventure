@@ -10,9 +10,4 @@ public class Menu : MonoBehaviour
         gameObject.SetActive(false);
         _hero.enabled = true;
     }
-
-    public void EnterShop()
-    {
-        //
-    }
 }
