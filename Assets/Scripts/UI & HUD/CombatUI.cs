@@ -1,14 +1,18 @@
 using UnityEngine;
 using TMPro;
 
-public class CombatUI : MonoBehaviour
+namespace MainGame.UI
 {
-    [SerializeField] private TextMeshProUGUI _entityName;
-    [SerializeField] private HealthBar _healthBar;
-
-    public void DisplayEntityData(EntityData entity)
+    [RequireComponent(typeof(HealthBar))]
+    public class CombatUI : MonoBehaviour
     {
-        _entityName.SetText(entity.name);
-        _healthBar.SetMaxHealth(entity.maxHealth);
+        [SerializeField] private TextMeshProUGUI _entityName;
+        [SerializeField] private HealthBar _healthBar;
+
+        public void DisplayEntityData(EntityData entity)
+        {
+            _entityName.SetText(entity.name);
+            _healthBar.SetMaxHealth(entity.maxHealth);
+        }
     }
 }

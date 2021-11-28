@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Reward))]
 public class Chest : Entity, IRewardable
 {
     [SerializeField] private Reward _reward;

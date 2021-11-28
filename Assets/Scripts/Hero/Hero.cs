@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace MainHero
 {
+    [RequireComponent(typeof(Combat))]
     public class Hero : Entity
     {
         [SerializeField] private Combat _combat;

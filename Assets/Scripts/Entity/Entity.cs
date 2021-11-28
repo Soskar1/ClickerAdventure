@@ -1,6 +1,9 @@
 using UnityEngine;
 using System;
+using MainGame.UI;
 
+[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(CombatUI))]
 public class Entity : MonoBehaviour, IPooledObject, IHittable
 {
     public EntityData data;

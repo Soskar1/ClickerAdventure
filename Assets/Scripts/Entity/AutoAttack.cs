@@ -8,12 +8,12 @@ public class AutoAttack : MonoBehaviour
 
     private void OnDisable() => _timerIsGoing = false;
 
-    public void Attack(Action action)
+    public void Attack(Action attackAction)
     {
         if (!_timerIsGoing)
         {
             _timerIsGoing = true;
-            StartCoroutine(Timer.StartTimer(_attackTime, () => { action.Invoke(); _timerIsGoing = false; }));
+            StartCoroutine(Timer.StartTimer(_attackTime, () => { attackAction.Invoke(); _timerIsGoing = false; }));
         }
     }
 }

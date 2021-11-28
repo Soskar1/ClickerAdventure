@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Combat))]
 public class GeometricAmplification : MonoBehaviour, IAmplification
 {
     [SerializeField] private float _healthMultiplier;

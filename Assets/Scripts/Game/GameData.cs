@@ -21,7 +21,7 @@ namespace MainGame
             }
         }
 
-        public Currency ReturnResource(CurrencyType resourceType)
+        public Currency TryGetCurrency(CurrencyType resourceType)
         {
             if (_currencies.TryGetValue(resourceType, out Currency resource))
                 return resource;

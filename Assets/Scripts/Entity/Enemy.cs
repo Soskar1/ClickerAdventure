@@ -1,11 +1,14 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Reward))]
+[RequireComponent(typeof(Combat))]
+[RequireComponent(typeof(AutoAttack))]
 public class Enemy : Entity, IRewardable
 {
     [SerializeField] private Reward _reward;
     [SerializeField] private Combat _combat;
     [SerializeField] private AutoAttack _autoAttack;
-    [SerializeField] private IAmplification _amplification;
+    private IAmplification _amplification;
 
     private void Start()
     {

@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthBar))]
 public class Health : MonoBehaviour
 {
     [SerializeField] private HealthBar _healthBar;
-
     [SerializeField] private float _maxHealth;
-    public float MaxHealth { get => _maxHealth; set => _maxHealth = value; }
-
     private float _currentHealth;
+
+    public float MaxHealth { get => _maxHealth; set => _maxHealth = value; }
 
     public Action Killed;
 
@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void ResetHealth()
+    private void ResetHealth()
     {
         _currentHealth = _maxHealth;
         _healthBar.SetMaxHealth(_maxHealth);

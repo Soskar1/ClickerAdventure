@@ -1,10 +1,11 @@
 using UnityEngine;
 using TMPro;
-using MainGame;
+using Currencies;
 using System.Collections.Generic;
 
-namespace Currencies.UI
+namespace MainGame.UI
 {
+    [RequireComponent(typeof(GameData))]
     public class CurrencyDisplay : MonoBehaviour
     {
         [SerializeField] private GameData _data;
@@ -16,7 +17,7 @@ namespace Currencies.UI
 
         private void Start()
         {
-            _greenShard = _data.ReturnResource(CurrencyType.GreenShard);
+            _greenShard = _data.TryGetCurrency(CurrencyType.GreenShard);
             _currencyText.Add(_greenShard, _amountText);
             _greenShard.CurrencyReceived += Display;
 
